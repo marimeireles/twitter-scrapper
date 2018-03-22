@@ -8,7 +8,7 @@ I believe that this kind of analysis is important to keep track on the community
 
 ## Tools
 
-I wanted to analyze people interacting about OSS and I imagined it'd be interesting to use Twitter data to make the analysis, Twitter is a social network widely used by people who are interested in OSS cummunity and therefore there are lots of data to be used.
+I wanted to analyze people interacting about OSS and I imagined it'd be interesting to use Twitter data to make the analysis, Twitter is a social network widely used by people who are interested in OSS community and therefore there are lots of data to be used.
 
 ### Twitter API
 
@@ -16,13 +16,13 @@ I've used the [Twitter API](https://developer.twitter.com/en/docs) to extract da
 
 ### VADER
 
-To make the sentiment analyses I chose the [VADER](https://github.com/cjhutto/vaderSentiment#introduction) tool because it was primarily developed to analyse microblogging and social media sites, especially Twitter. 
+To make the sentiment analysis I chose the [VADER](https://github.com/cjhutto/vaderSentiment#introduction) tool because it was primarily developed to analyze microblogging and social media sites, especially Twitter. 
 
 VADER uses [nltk](http://www.nltk.org/_modules/nltk/sentiment/vader.html) Python library and it sorts the outputs of its analysis upon strings as positive, negative or neutral. It also offers a compound polarity score which is a normalization of the sentiments that VADER identifies on the data, it's functioning is better explained [here](https://stackoverflow.com/questions/40325980/how-is-the-vader-compound-polarity-score-calculated-in-python-nltk) and I've used this piece of information to plots the graphs you'll see below.
 
 ### Python
 
-All the code is written in Python 3. The reason why I chose Python is because it's a language that have an enormous community that creates awesome tools for it. I needed to run a sentiment analyses, deal with big json files and create graphs with the results and Python was the only language I found that offered me great quality tools for everything I needed. 
+All the code is written in Python 3. The reason why I chose Python is because it's a language that have an enormous community that creates awesome tools for it. I needed to run a sentiment analysis, deal with big json files and create graphs with the results and Python was the only language I found that offered me great quality tools for everything I needed. 
 
 ## Data
 
@@ -46,11 +46,11 @@ The data, even though it isn't very extensive, is enough to have a general idea 
 
 I've chosen to make an analysis based on the timezone that was setted in the person's twitter account because this was a common datum, there were very little dara about the country or city where the person was for most of Twitter's users.
 
-I've also made an analyses based on the language spoken by users to see if there was any interesting connection between the idiom and the health of the OSS community around it.
+I've also made an analysis based on the language spoken by users to see if there was any interesting connection between the idiom and the health of the OSS community around it.
 
 There was considerable less data from languages other than English which made the quality of my analysis of these data decrease. Also, even though VADER is the best OSS tool I've found on the web it doesn't offer a great support for languages other than English and that might have affected the results on other languages also decreasing analysis quality.
 
-I've included other languages on the analyses because I wanted to be as horizontal as possible not imposing English as the only relevant language when analyzing OSS communities.
+I've included other languages on the analysis because I wanted to be as horizontal as possible not imposing English as the only relevant language when analyzing OSS communities.
 
 ## Results
 
@@ -182,13 +182,13 @@ plt.show()
 
 This code does the same that the one before it. I've used Pandas to treat the data and I chose the timezones that returned more responses in my previous test to run the sentiment analysis using VADER tool.
 
-By observing the box plot we can see that all timezones of the US and Canada have a more positive result, with the Pacific Time having a score of about 0.125, the Eastern Time 0.065 and Central Time with the highest rate of 0.250 in a 1.00 scale. London also had a positive result with an average score of 0.250. Brasília had the lowest score -0.375 and a big data variation with many positive results out of the curve. Madri did great on the sentiment analyses with an average of 0.250. Amsterdam had a lot of data variation and had a neutral score. Paris also had a neutral score and well distributed data, which means that there are more or less the same number of people talking positive and negative things about OSS. Bern had a neutral average score, but there are more people talking negative things about OSS than there are talking positive things. New Delhi kept a positive rate but had a neutral score, which means that even though their users used some positive language to talk about OSS most of them used a language classsified as neutral. 
+By observing the box plot we can see that all timezones of the US and Canada have a more positive result, with the Pacific Time having a score of about 0.125, the Eastern Time 0.065 and Central Time with the highest rate of 0.250 in a 1.00 scale. London also had a positive result with an average score of 0.250. Brasília had the lowest score -0.375 and a big data variation with many positive results out of the curve. Madri did great on the sentiment analysis with an average of 0.250. Amsterdam had a lot of data variation and had a neutral score. Paris also had a neutral score and well distributed data, which means that there are more or less the same number of people talking positive and negative things about OSS. Bern had a neutral average score, but there are more people talking negative things about OSS than there are talking positive things. New Delhi kept a positive rate but had a neutral score, which means that even though their users used some positive language to talk about OSS most of them used a language classsified as neutral. 
 
 Even though Brasilia, Paris and Bern have shown some negative reactions and talk about OSS, there is much more positive reactions related to OSS. The big data variation that Brasília shown has nothing to do with the language, I've manually checked the Brazilian-Portuguse json file, which is where I extract the data from and there isn't enough information to create such a big variation. I believe that, unfortunatly, there is a lot of negative reactions when people are talking about OSS in Brasília timezone.
 
 ### Sentiment Analysis of Twitter Users Discussing About OSS by Language
 
-#### English Language analyses
+#### English Language analysis
 
 I imagined it would also be interesting to analyze data paying attention to what languages users used. I wondered that I could make interesting connections between how users communicate in their own languages and how they communicate in English and this is the code I've used to create a histogram to visualize what's happening:
 
